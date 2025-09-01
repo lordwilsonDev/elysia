@@ -1,0 +1,30 @@
+{
+  "build_endpoints": {
+    "build_local": {
+      "priority": 1,
+      "success_rate": 0.7,
+      "description": "Direct execution in container",
+      "estimated_time": 12.3
+    },
+    "build_docker_in_docker": {
+      "priority": 2,
+      "success_rate": 0.2,
+      "description": "CI/CD-style nested build",
+      "estimated_time": 22.1
+    },
+    "build_from_template": {
+      "priority": 3,
+      "success_rate": 0.1,
+      "description": "Rebuild from golden snapshot",
+      "estimated_time": 45.0
+    }
+  },
+  "inversion_vectors": {
+    "critical": 10,
+    "high": 15,
+    "medium": 8,
+    "future": 70
+  },
+  "resilience_threshold": 8.5,
+  "max_retries": 3
+}
